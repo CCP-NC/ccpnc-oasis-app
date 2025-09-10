@@ -1,0 +1,2 @@
+recursive-include * nomad_plugin.yaml
+graft src/ccpnc_oasis_app/example_uploads
