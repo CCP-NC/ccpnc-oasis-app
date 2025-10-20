@@ -30,7 +30,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Sathya-S3/ccpnc-oasis-app"
+Repository = "https://github.com/CCP-NC/ccpnc-oasis-app"
 
 [project.entry-points.'ccpnc_oasis_app']
 myapp = "ccpnc_oasis_app.apps:myapp"
