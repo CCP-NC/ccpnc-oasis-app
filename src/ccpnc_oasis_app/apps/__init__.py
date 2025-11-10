@@ -25,7 +25,7 @@ app_entry_point = AppEntryPoint(
     name='NewApp',
     description='NMR app entry point configuration.',
     app=App(
-        label='NEW NMR APP',
+        label='CCP-NC NMR APP',
         path='app',
         category='simulation',
         # Load search quantities from custom schema first
