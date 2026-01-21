@@ -11,6 +11,7 @@ from nomad.config.models.ui import (
     Layout,
     Menu,
     MenuItemHistogram,
+    MenuItemPeriodicTable,
     MenuItemTerms,
     RowActionNorth,
     RowActions,
@@ -189,6 +190,80 @@ app_entry_point = AppEntryPoint(
                             width=12,
                         ),
                     ],
+                ),
+                Menu(
+                    title='NMR Parameters - Magnetic Shielding',
+                    size='xxl',
+                    items=[
+                        MenuItemPeriodicTable(
+                            title='Element Selection',
+                            search_quantity='results.material.elements',
+                            width=12,
+                            show_header=True,
+                            show_statistics=True,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.H_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Hydrogen (H)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.C_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Carbon (C)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.N_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Nitrogen (N)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.O_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Oxygen (O)',
+                            autorange=True,
+                            width=12,
+                        ),
+                    ]
+                ),
+                Menu(
+                    title='NMR Parameters - Electric Field Gradient',
+                    size='xxl',
+                    items=[
+                        MenuItemPeriodicTable(
+                            title='Element Selection',
+                            search_quantity='results.material.elements',
+                            width=12,
+                            show_header=True,
+                            show_statistics=True,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.H_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Hydrogen (H)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.C_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Carbon (C)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.N_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Nitrogen (N)',
+                            autorange=True,
+                            width=12,
+                        ),
+                        MenuItemHistogram(
+                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.O_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            title='Oxygen (O)',
+                            autorange=True,
+                            width=12,
+                        ),
+                    ]
                 ),
             ],
         ),
