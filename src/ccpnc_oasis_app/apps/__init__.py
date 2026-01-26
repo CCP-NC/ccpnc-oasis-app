@@ -189,76 +189,128 @@ app_entry_point = AppEntryPoint(
                     ],
                 ),
                 Menu(
-                    title='NMR Parameters - Magnetic Shielding',
-                    size='xxl',
+                    title='NMR Parameters',
+                    size='md',
                     items=[
-                        MenuItemPeriodicTable(
-                            title='Element Selection',
-                            search_quantity='results.material.elements',
-                            width=12,
-                            show_header=True,
-                            show_statistics=True,
+                        Menu(
+                            title='Magnetic Shielding',
+                            size='md',
+                            items=[
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.H_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Hydrogen (H)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.C_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Carbon (C)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.N_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Nitrogen (N)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.F_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Fluorine (F)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.Na_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Sodium (Na)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.Al_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Aluminium (Al)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.P_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Phosphorus (P)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.Si_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Silicon (Si)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.Cl_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Chlorine (Cl)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                            ]
                         ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.H_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Hydrogen (H)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.C_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Carbon (C)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.N_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Nitrogen (N)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_magnetic_shielding.O_isotropy_list.isotropy#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Oxygen (O)',
-                            autorange=True,
-                            width=12,
-                        ),
-                    ]
-                ),
-                Menu(
-                    title='NMR Parameters - Electric Field Gradient',
-                    size='xxl',
-                    items=[
-                        MenuItemPeriodicTable(
-                            title='Element Selection',
-                            search_quantity='results.material.elements',
-                            width=12,
-                            show_header=True,
-                            show_statistics=True,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.H_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Hydrogen (H)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.C_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Carbon (C)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.N_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Nitrogen (N)',
-                            autorange=True,
-                            width=12,
-                        ),
-                        MenuItemHistogram(
-                            x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.O_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                            title='Oxygen (O)',
-                            autorange=True,
-                            width=12,
+                        Menu(
+                            title='Electric Field Gradient',
+                            size='md',
+                            items=[
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.H_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Hydrogen (H)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.C_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Carbon (C)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.N_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Nitrogen (N)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.F_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Fluorine (F)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.Na_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Sodium (Na)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.Al_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Aluminium (Al)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.P_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Phosphorus (P)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.Si_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Silicon (Si)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                                MenuItemHistogram(
+                                    x='data.element_resolved_nmr_search.element_resolved_electric_field_gradient.Cl_vzz_list.Vzz#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                                    title='Chlorine (Cl)',
+                                    autorange=True,
+                                    width=12,
+                                ),
+                            ]
                         ),
                     ]
                 ),
