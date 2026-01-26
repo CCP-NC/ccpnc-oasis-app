@@ -1,7 +1,6 @@
 from nomad.config.models.plugins import AppEntryPoint
 from nomad.config.models.ui import (
     App,
-    Axis,
     Column,
     Dashboard,
     FilterMenu,
@@ -11,7 +10,6 @@ from nomad.config.models.ui import (
     Layout,
     Menu,
     MenuItemHistogram,
-    MenuItemPeriodicTable,
     MenuItemTerms,
     RowActionNorth,
     RowActions,
@@ -91,7 +89,6 @@ app_entry_point = AppEntryPoint(
                             options=10,
                             width=12,
                         ),
-                        # MenuItemHistogram(x=Axis(search_quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation')),
                         MenuItemTerms(
                             quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             options=10,
@@ -282,7 +279,10 @@ app_entry_point = AppEntryPoint(
     )
 )
 
-schema_name = 'nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNC_VoilaNotebook'
+schema_name = (
+    'nomad_oasis_schema_parser_plugin.schema_packages.schema_package.'
+    'CCPNC_VoilaNotebook'
+)
 ccpnc_voila_app = AppEntryPoint(
     name='CCPNC Voila Notebook',
     description='CCPNC Voila Notebook app entry point configuration.',
