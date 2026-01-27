@@ -125,17 +125,17 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='main_author.name',
+                            quantity='authors.name',
                             title='Author name',
                             show_input=True,
-                            options=10,  # Don't show formula options
+                            options=10,  # No. of display options
                             width=12,
                         ),
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.ccpnc_record.immutable_id#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Magres Immutable ID',
                             show_input=True,
-                            options=0,  # Don't show formula options
+                            options=0,  # No. of display options
                             width=12,
                         ),
                         MenuItemHistogram(
@@ -145,7 +145,7 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='External Database',
-                            options=5,  # Show top 5 database options
+                            options=5,  # No. of display options
                             width=12,
                         ),
                         MenuItemTerms(
@@ -165,7 +165,7 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.ccpnc_record.license#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='License',
-                            options=5,  # Show top 5 database options
+                            options=5,  # No. of display options
                             width=12,
                         ),
                     ],
@@ -183,7 +183,7 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='results.method.simulation.dft.xc_functional_names',
                             title='XC Functional Names',
-                            options=10,
+                            options=10,  # No. of display options
                             width=12,
                         ),
                     ],
