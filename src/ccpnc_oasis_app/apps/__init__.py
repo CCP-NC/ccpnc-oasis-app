@@ -193,7 +193,7 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         Menu(
-                            title='Magnetic Shielding (dimensionless)',
+                            title='Magnetic Shielding (ppm)',
                             size='md',
                             items=[
                                 MenuItemHistogram(
@@ -253,7 +253,7 @@ app_entry_point = AppEntryPoint(
                             ]
                         ),
                         Menu(
-                            title='Electric Field Gradient (V/m^2)',
+                            title='Electric Field Gradient (Hartree atomic units)',
                             size='md',
                             items=[
                                 MenuItemHistogram(
