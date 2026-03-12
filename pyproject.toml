@@ -25,10 +25,7 @@ maintainers = [
 ]
 license = { file = "LICENSE" }
 dependencies = [
-    #"nomad-lab>=1.3.0",
-    #Temporary pint units patch for nomad-lab, 
-    #TODO: revert back to central nomad-lab when EFG units are included.
-    "nomad-lab @ git+https://github.com/CCP-NC/nomad-FAIR-nmr-units-patch.git@main",
+    "nomad-lab >= 1.4.1",
     "python-magic-bin; sys_platform == 'win32'",
 ]
 
