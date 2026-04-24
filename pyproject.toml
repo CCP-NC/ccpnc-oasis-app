@@ -115,7 +115,6 @@ where = ["src"]
 
 [project.entry-points.'nomad.plugin']
 app_entry_point = "ccpnc_oasis_app.apps:app_entry_point"
-ccpnc_voila_app = "ccpnc_oasis_app.apps:ccpnc_voila_app"
 
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
