@@ -4,19 +4,10 @@ from nomad.config.models.ui import (
     Axis,
     Column,
     Dashboard,
-    FilterMenu,
-    FilterMenus,
-    FilterMenuSizeEnum,
-    Filters,
     Layout,
     Menu,
     MenuItemHistogram,
     MenuItemTerms,
-    RowActionNorth,
-    RowActions,
-    RowDetails,
-    Rows,
-    RowSelection,
     SearchQuantities,
     WidgetPeriodicTable,
 )
@@ -355,72 +346,6 @@ app_entry_point = AppEntryPoint(
                     scale='linear',
                 )
             ]
-        ),
-    )
-)
-
-schema_name = (
-    'nomad_oasis_schema_parser_plugin.schema_packages.schema_package.'
-    'CCPNC_VoilaNotebook'
-)
-ccpnc_voila_app = AppEntryPoint(
-    name='CCPNC Voila Notebook',
-    description='CCPNC Voila Notebook app entry point configuration.',
-    app=App(
-        label = 'CCPNC Voila Notebook',
-        path = 'upload-metadata',
-        category = 'Tools',
-        description = 'Download CCPNC metadata spreadsheet',
-        filters=Filters(
-            include=[
-                f'*#{schema_name}'
-            ]
-        ),
-        filters_locked={
-            'section_defs.definition_qualified_name': schema_name
-        },
-        filter_menus=FilterMenus(
-            options={
-                'custom_quantities': FilterMenu(
-                    label='Notebooks',
-                    size=FilterMenuSizeEnum.L
-                ),
-                'author': FilterMenu(
-                    label='Author',
-                    size=FilterMenuSizeEnum.M
-                ),
-                'metadata': FilterMenu(
-                    label='Visibility / IDs'
-                ),
-            }
-        ),
-        columns=[
-            Column(
-                quantity=f'data.name#{schema_name}',
-                selected=True,
-                label='Tool Name'
-            ),
-            Column(
-                quantity=f'data.notebook_file#{schema_name}',
-                label='Notebook File'
-            ),
-            Column(
-                quantity='upload_create_time',
-                label='Created',
-                selected=True
-            ),
-        ],
-        rows=Rows(
-            actions=RowActions(
-                options={
-                    'launch': RowActionNorth(
-                        tool_name='voila',
-                        filepath=f'data.notebook_file#{schema_name}',
-                    )
-                }
-            ),
-            details=RowDetails(),
-            selection=RowSelection(),
         ),
     )
 )
