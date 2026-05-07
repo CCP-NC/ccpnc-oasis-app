@@ -16,7 +16,7 @@ name = "ccpnc-oasis-app"
 description = "NOMAD Oasis app for customising gui elements in the CCPNC NOMAD Oasis database."
 version = "0.1.0"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 authors = [
     { name = "Sathya Sai Seetharaman", email = "sathya-sai.seetharaman@stfc.ac.uk" },
 ]
@@ -25,12 +25,15 @@ maintainers = [
 ]
 license = { file = "LICENSE" }
 dependencies = [
-    "nomad-lab>=1.3.0",
+    "nomad-lab == 1.4.2",
     "python-magic-bin; sys_platform == 'win32'",
 ]
 
 [project.urls]
-Repository = "https://github.com/Sathya-S3/ccpnc-oasis-app"
+Repository = "https://github.com/CCP-NC/ccpnc-oasis-app"
+
+[project.entry-points.'ccpnc_oasis_app']
+myapp = "ccpnc_oasis_app.apps:myapp"
 
 [project.optional-dependencies]
 dev = ["ruff", "pytest", "structlog"]
@@ -111,9 +114,6 @@ package-dir = { "" = "src" }
 where = ["src"]
 
 [project.entry-points.'nomad.plugin']
-
-
-
 app_entry_point = "ccpnc_oasis_app.apps:app_entry_point"
 
 [tool.cruft]
