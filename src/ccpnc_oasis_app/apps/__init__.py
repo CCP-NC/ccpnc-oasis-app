@@ -228,13 +228,13 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='results.method.simulation.dft.xc_functional_type',
+                            quantity='data.model_method.jacobs_ladder#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Jacob\'s Ladder',
                             options=10,
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='results.method.simulation.dft.xc_functional_names',
+                            quantity='data.model_method.xc.functional_key#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='XC Functional Names',
                             options=10,  # No. of display options
                             width=12,
