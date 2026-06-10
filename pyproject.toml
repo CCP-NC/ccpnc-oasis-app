@@ -14,7 +14,7 @@ classifiers = [
 ]
 name = "ccpnc-oasis-app"
 description = "NOMAD Oasis app for customising gui elements in the CCPNC NOMAD Oasis database."
-version = "0.2.1"
+dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
@@ -119,3 +119,6 @@ app_entry_point = "ccpnc_oasis_app.apps:app_entry_point"
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
 skip = [".github/*"]
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
