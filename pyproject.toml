@@ -14,7 +14,7 @@ classifiers = [
 ]
 name = "ccpnc-oasis-app"
 description = "NOMAD Oasis app for customising gui elements in the CCPNC NOMAD Oasis database."
-version = "0.2.1"
+dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
