@@ -119,3 +119,6 @@ app_entry_point = "ccpnc_oasis_app.apps:app_entry_point"
 [tool.cruft]
 # Avoid updating workflow files, this leads to permissions issues
 skip = [".github/*"]
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
