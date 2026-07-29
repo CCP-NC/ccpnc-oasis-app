@@ -128,6 +128,7 @@ app_entry_point = AppEntryPoint(
                     items=[
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.material_properties.chemical_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            show_input=False,
                             options=10,
                             width=12,
                         ),
@@ -139,11 +140,13 @@ app_entry_point = AppEntryPoint(
                     items=[
                         MenuItemTerms(
                             quantity='data.program.name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            show_input=False,
                             options=10,
                             width=12,
                         ),
                         MenuItemTerms(
                             quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            show_input=False,
                             options=10,
                             width=12,
                         ),
@@ -180,7 +183,8 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='authors.name',
                             title='Author name',
-                            show_input=True,
+                            show_input=True,  # checkboxes only; no suggestion data indexed for
+                            # fields inside repeating subsections in this nomad-FAIR version
                             options=10,  # No. of display options
                             width=12,
                         ),
@@ -198,6 +202,7 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='External Database',
+                            show_input=False,
                             options=5,  # No. of display options
                             width=12,
                         ),
@@ -218,6 +223,7 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='data.ccpnc_metadata.ccpnc_record.license#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='License',
+                            show_input=False,
                             options=5,  # No. of display options
                             width=12,
                         ),
@@ -230,12 +236,14 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='data.model_method.jacobs_ladder#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Jacob\'s Ladder',
+                            show_input=False,
                             options=10,
                             width=12,
                         ),
                         MenuItemTerms(
                             quantity='data.model_method.xc.functional_key#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='XC Functional Names',
+                            show_input=False,
                             options=10,  # No. of display options
                             width=12,
                         ),
