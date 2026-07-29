@@ -157,14 +157,14 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='data.model_system.chemical_formula.iupac#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            quantity='results.material.chemical_formula_iupac',
                             title='Chemical Formula IUPAC',
                             show_input=True,
                             options=0,  # Don't show formula options
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.model_system.chemical_formula.hill#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            quantity='results.material.chemical_formula_hill',
                             title='Chemical Formula Hill',
                             show_input=True,
                             options=0,  # Don't show formula options
