@@ -200,6 +200,13 @@ app_entry_point = AppEntryPoint(
                             autorange=False,
                         ),
                         MenuItemTerms(
+                            quantity='datasets.dataset_name',
+                            title='Dataset name',
+                            show_input=True,
+                            options=10,  # No. of display options
+                            width=12,
+                        ),
+                        MenuItemTerms(
                             quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='External Database',
                             show_input=False,
