@@ -183,8 +183,9 @@ app_entry_point = AppEntryPoint(
                         MenuItemTerms(
                             quantity='authors.name',
                             title='Author name',
-                            show_input=True,  # checkboxes only; no suggestion data indexed for
-                            # fields inside repeating subsections in this nomad-FAIR version
+                            show_input=True,  # checkboxes only; no suggestion data 
+                            # indexed for fields inside repeating subsections in this 
+                            # nomad-FAIR version
                             options=10,  # No. of display options
                             width=12,
                         ),
