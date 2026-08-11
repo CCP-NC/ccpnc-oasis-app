@@ -96,26 +96,68 @@ app_entry_point = AppEntryPoint(
             ]
         },
         columns=[
+            # Default visible columns
             Column(
-                quantity='data.ccpnc_metadata.material_properties.chemical_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                search_quantity='data.ccpnc_metadata.material_properties.chemical_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                 label='Chemical Name',
                 selected=True,
             ),
             Column(
-                quantity='data.ccpnc_metadata.ccpnc_record.immutable_id#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
-                label='Magres Immutable ID',
+                search_quantity='results.material.chemical_formula_hill',
+                label='Unit Cell Formula',
                 selected=True,
             ),
             Column(
-                quantity='upload_create_time',
+                search_quantity='upload_create_time',
                 label='Upload Time',
                 selected=True,
             ),
             Column(
-                quantity='main_author.name',
+                search_quantity='main_author.name',
                 label='Main Author',
                 selected=True,
-            )
+            ),
+            # Available but unchecked by default
+            Column(
+                search_quantity='data.ccpnc_metadata.ccpnc_record.immutable_id#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='Magres Immutable ID',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.program.name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='DFT Code',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='DFT Code Version',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.ccpnc_metadata.ccpnc_record.license#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='License',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='External Database',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.ccpnc_metadata.external_database_reference.external_database_reference_code#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='External DB reference code',
+                selected=False,
+            ),
+            Column(
+                search_quantity='data.ccpnc_metadata.publication_record.doi#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                label='Publication DOI',
+                selected=False,
+            ),
+            Column(
+                search_quantity='datasets.dataset_name',
+                label='Dataset',
+                selected=False,
+            ),
         ],
         menu=Menu(
             title='NMR Filters',
@@ -127,7 +169,7 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.material_properties.chemical_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.material_properties.chemical_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             show_input=False,
                             options=10,
                             width=12,
@@ -139,13 +181,13 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='data.program.name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.program.name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             show_input=False,
                             options=10,
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.program.version#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             show_input=False,
                             options=10,
                             width=12,
@@ -157,14 +199,14 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='results.material.chemical_formula_iupac',
+                            search_quantity='results.material.chemical_formula_iupac',
                             title='Chemical Formula IUPAC',
                             show_input=True,
                             options=0,  # Don't show formula options
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='results.material.chemical_formula_hill',
+                            search_quantity='results.material.chemical_formula_hill',
                             title='Chemical Formula Hill',
                             show_input=True,
                             options=0,  # Don't show formula options
@@ -181,7 +223,7 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='authors.name',
+                            search_quantity='authors.name',
                             title='Author name',
                             show_input=True,  # checkboxes only; no suggestion data 
                             # indexed for fields inside repeating subsections in this 
@@ -190,7 +232,7 @@ app_entry_point = AppEntryPoint(
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.ccpnc_record.immutable_id#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.ccpnc_record.immutable_id#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Magres Immutable ID',
                             show_input=True,
                             options=0,  # No. of display options
@@ -201,35 +243,35 @@ app_entry_point = AppEntryPoint(
                             autorange=False,
                         ),
                         MenuItemTerms(
-                            quantity='datasets.dataset_name',
+                            search_quantity='datasets.dataset_name',
                             title='Dataset name',
                             show_input=True,
                             options=10,  # No. of display options
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.external_database_reference.external_database_name#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='External Database',
                             show_input=False,
                             options=5,  # No. of display options
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.external_database_reference.external_database_reference_code#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.external_database_reference.external_database_reference_code#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Database Reference Code',
                             show_input=True,
                             options=0,
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.publication_record.doi#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.publication_record.doi#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Publication DOI',
                             show_input=True,
                             options=0,
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.ccpnc_metadata.ccpnc_record.license#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.ccpnc_metadata.ccpnc_record.license#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='License',
                             show_input=False,
                             options=5,  # No. of display options
@@ -242,14 +284,14 @@ app_entry_point = AppEntryPoint(
                     size='md',
                     items=[
                         MenuItemTerms(
-                            quantity='data.model_method.jacobs_ladder#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.model_method.jacobs_ladder#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='Jacob\'s Ladder',
                             show_input=False,
                             options=10,
                             width=12,
                         ),
                         MenuItemTerms(
-                            quantity='data.model_method.xc.functional_key#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
+                            search_quantity='data.model_method.xc.functional_key#nomad_oasis_schema_parser_plugin.schema_packages.schema_package.CCPNCSimulation',
                             title='XC Functional Names',
                             show_input=False,
                             options=10,  # No. of display options
